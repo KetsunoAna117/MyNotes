@@ -15,7 +15,7 @@ struct CreateNewNotesView: View {
     
     var body: some View {
         VStack(alignment: .leading, content: {
-            List {
+            VStack(alignment: .leading) {
                 Section {
                     TextField("", text: $noteTitle, axis: .vertical)
                         .font(.title2)
@@ -23,6 +23,7 @@ struct CreateNewNotesView: View {
                         .padding(.bottom, 1)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.never)
+                    Divider()
                 } header: {
                     Text("Title")
                 }
@@ -33,14 +34,16 @@ struct CreateNewNotesView: View {
                         .foregroundStyle(Color.secondary)
                         .autocorrectionDisabled(true)
                         .textInputAutocapitalization(.never)
+                    Divider()
                 } header: {
                     Text("Content")
                 }
 
             }
-            .listStyle(.insetGrouped)
             .navigationTitle("New Note")
             .navigationBarBackButtonHidden(true)
+            
+            Spacer()
             
             Button {
                 let newNote = Notes(title: noteTitle, content: noteDesc)
@@ -52,10 +55,11 @@ struct CreateNewNotesView: View {
                     .padding(.vertical, 10)
             }
             .buttonStyle(.borderedProminent)
-            .padding(.horizontal, 40)
+            .padding(.horizontal, 30)
             .padding(.vertical, 10)
 
         })
+        .padding([.top, .horizontal], 16)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
