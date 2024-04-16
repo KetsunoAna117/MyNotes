@@ -12,6 +12,7 @@ struct MyNotesView: View {
     @Environment(\.editMode) var editMode
     
     @State private var isAddNewNotePressed: Bool = false
+    @State private var modalDetent = PresentationDetent.medium
     
     var body: some View {
         NavigationStack {
@@ -32,11 +33,16 @@ struct MyNotesView: View {
                     Image(systemName: "doc.badge.plus")
                 })
             })
-            .navigationDestination(
-                isPresented: $isAddNewNotePressed) {
+            .sheet(isPresented: $isAddNewNotePressed, content: {
+                NavigationStack {
                     CreateNewNotesView()
                         .environmentObject(noteList)
-            }
+                }
+                .presentationDetents(
+                    [.medium, .large],
+                selection: $modalDetent)
+            })
+
         }
     }
 }
