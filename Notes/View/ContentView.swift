@@ -11,12 +11,10 @@ struct ContentView: View {
     @EnvironmentObject private var noteList: NoteList
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                MyNotesView()
-                    .environmentObject(noteList)
+        VStack(alignment: .leading) {
+            MyNotesView()
+                .environmentObject(noteList)
 //                Profile(user: noteList.user)
-            }
         }
     }
 }

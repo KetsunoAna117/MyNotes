@@ -11,20 +11,20 @@ struct Profile: View {
     @State var user: User
     
     var body: some View {
-        List {
-            Section("Name") {
-                TextField("Name", text: $user.name, axis: .vertical)
+        NavigationStack {
+            List {
+                Section("Name") {
+                    TextField("Name", text: $user.name, axis: .vertical)
+                }
+                Section("Email") {
+                    TextField("Email", text: $user.email, axis: .vertical)
+                }
             }
-            Section("Email") {
-                TextField("Email", text: $user.email, axis: .vertical)
-            }
+            .navigationTitle("My Profile")
         }
-        .navigationTitle("My Profile")
     }
 }
 
 #Preview {
-    NavigationStack {
-        Profile(user: NoteList().user)
-    }
+    Profile(user: NoteList().user)
 }
