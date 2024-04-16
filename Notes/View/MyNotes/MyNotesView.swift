@@ -14,34 +14,34 @@ struct MyNotesView: View {
     @State private var isAddNewNotePressed: Bool = false
     
     var body: some View {
-        List {
-            ForEach($noteList.notes, id: \.self) { $note in
-                NavigationLink {
-                    NotesDetailView(notes: $note)
-                } label: {
-                    NotesRowView(notes: note)
+        NavigationStack {
+            List {
+                ForEach($noteList.notes, id: \.self) { $note in
+                    NavigationLink {
+                        NotesDetailView(notes: $note)
+                    } label: {
+                        NotesRowView(notes: note)
+                    }
                 }
             }
-        }
-        .navigationTitle("My Notes")
-        .toolbar(content: {
-            Button(action: {
-                isAddNewNotePressed = true
-            }, label: {
-                Image(systemName: "doc.badge.plus")
+            .navigationTitle("My Notes")
+            .toolbar(content: {
+                Button(action: {
+                    isAddNewNotePressed = true
+                }, label: {
+                    Image(systemName: "doc.badge.plus")
+                })
             })
-        })
-        .navigationDestination(
-            isPresented: $isAddNewNotePressed) {
-                CreateNewNotesView()
-                    .environmentObject(noteList)
+            .navigationDestination(
+                isPresented: $isAddNewNotePressed) {
+                    CreateNewNotesView()
+                        .environmentObject(noteList)
             }
+        }
     }
 }
 
 #Preview {
-    NavigationStack {
-        MyNotesView()
-            .environmentObject(NoteList())
-    }
+    MyNotesView()
+        .environmentObject(NoteList())
 }
