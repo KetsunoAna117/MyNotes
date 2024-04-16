@@ -58,7 +58,6 @@ struct CreateNewNotesView: View {
             .padding(.vertical, 10)
 
         })
-        .padding([.top, .horizontal], 16)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
