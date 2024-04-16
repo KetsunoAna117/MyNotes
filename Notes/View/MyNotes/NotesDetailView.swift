@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NotesDetailView: View {
-    @Environment(\.presentationMode) var presentationMode
     @Binding var notes: Notes
     
     var body: some View {
@@ -24,22 +23,10 @@ struct NotesDetailView: View {
                 TextEditor(text: $notes.content)
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
-                    .frame(height: 400)
+                    .frame(height: 500)
                 
             })
             .navigationTitle("Note Details")
-            .navigationBarBackButtonHidden(true)
-            
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("Save")
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-            }
-            .buttonStyle(.borderedProminent)
-            .padding(.horizontal, 40)
-            .padding(.vertical, 10)
 
         })
         .frame(maxWidth: .infinity, alignment: .leading)
