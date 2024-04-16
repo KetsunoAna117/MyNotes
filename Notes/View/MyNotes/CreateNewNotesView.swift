@@ -37,6 +37,7 @@ struct CreateNewNotesView: View {
                     }
                     .autocorrectionDisabled(true)
                     .textInputAutocapitalization(.never)
+                    .frame(height: 400)
                 
             })
             .navigationTitle("New Note")

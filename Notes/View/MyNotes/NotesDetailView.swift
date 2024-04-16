@@ -13,30 +13,20 @@ struct NotesDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading, content: {
-            List {
-                Section {
-                    TextField("", text: $notes.title, axis: .vertical)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 1)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                } header: {
-                    Text("Title")
-                }
+            Form(content: {
+                TextField("Title", text: $notes.title, axis: .vertical)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                    .padding(.vertical)
                 
-                Section {
-                    TextField("", text: $notes.content, axis: .vertical)
-                        .font(.body)
-                        .foregroundStyle(Color.secondary)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                } header: {
-                    Text("Content")
-                }
-
-            }
-            .listStyle(.insetGrouped)
+                TextEditor(text: $notes.content)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                    .frame(height: 400)
+                
+            })
             .navigationTitle("Note Details")
             .navigationBarBackButtonHidden(true)
             
