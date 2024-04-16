@@ -41,7 +41,6 @@ struct CreateNewNotesView: View {
                 
             })
             .navigationTitle("New Note")
-            .navigationBarBackButtonHidden(true)
             
             Spacer()
             
