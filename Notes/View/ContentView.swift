@@ -18,22 +18,21 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                // kondisi view berdasarkan tab
-                TabView(selection: $activeTab, content:  {
-                    switch activeTab {
-                        case .mynotes:
-                            MyNotesView()
-                                .tag(Tab.mynotes)
-                        case .myprofile:
-                            Profile(user: noteList.user)
-                                .tag(Tab.myprofile)
-                        }
-                })
-
-            }
-        }
+        // kondisi view berdasarkan tab
+        TabView(selection: $activeTab, content:  {
+            MyNotesView()
+                .environmentObject(noteList)
+                .tag(Tab.mynotes)
+                .tabItem {
+                    Label("My Notes", systemImage: "note")
+                }
+            
+            Profile(user: noteList.user)
+                .tag(Tab.myprofile)
+                .tabItem {
+                    Label("My Profile", systemImage: "person")
+                }
+        })
     }
 }
 
