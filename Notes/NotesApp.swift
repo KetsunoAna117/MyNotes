@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct NotesApp: App {
+    @State private var database: NoteList = NoteList()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(database)
         }
     }
 }
