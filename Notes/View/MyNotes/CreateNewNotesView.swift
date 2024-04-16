@@ -13,33 +13,32 @@ struct CreateNewNotesView: View {
     @State private var noteTitle: String = ""
     @State private var noteDesc: String = ""
     
+    @State private var placeholderDesc: String = "Description"
+    
     var body: some View {
         VStack(alignment: .leading, content: {
-            VStack(alignment: .leading) {
-                Section {
-                    TextField("", text: $noteTitle, axis: .vertical)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 1)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                    Divider()
-                } header: {
-                    Text("Title")
-                }
+            Form(content: {
+                TextField("Title", text: $noteTitle, axis: .vertical)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                    .padding(.vertical)
                 
-                Section {
-                    TextField("", text: $noteDesc, axis: .vertical)
-                        .font(.body)
-                        .foregroundStyle(Color.secondary)
-                        .autocorrectionDisabled(true)
-                        .textInputAutocapitalization(.never)
-                    Divider()
-                } header: {
-                    Text("Content")
-                }
-
-            }
+                TextEditor(text: $noteDesc)
+                    .foregroundStyle(self.noteDesc == placeholderDesc ? Color.secondary : Color.primary)
+                    .onTapGesture(perform: {
+                        if self.noteDesc == placeholderDesc {
+                            self.noteDesc = ""
+                        }
+                    })
+                    .onAppear(){
+                        self.noteDesc = placeholderDesc
+                    }
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                
+            })
             .navigationTitle("New Note")
             .navigationBarBackButtonHidden(true)
             
@@ -59,7 +58,6 @@ struct CreateNewNotesView: View {
             .padding(.vertical, 10)
 
         })
-        .padding([.top, .horizontal], 16)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
