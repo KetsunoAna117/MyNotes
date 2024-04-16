@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         // kondisi view berdasarkan tab
         TabView(selection: $activeTab, content:  {
-            MyNotesView()
+            MyNotesView(filteredNotes: noteList.notes)
                 .environmentObject(noteList)
                 .tag(Tab.mynotes)
                 .tabItem {

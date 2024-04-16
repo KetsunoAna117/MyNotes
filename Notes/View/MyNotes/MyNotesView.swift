@@ -13,17 +13,21 @@ struct MyNotesView: View {
     
     @State private var isAddNewNotePressed: Bool = false
     @State private var modalDetent = PresentationDetent.medium
+    @State private var searchedText: String = ""
+    
+    @State var filteredNotes: [Notes]
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach($noteList.notes, id: \.self) { $note in
+                ForEach($filteredNotes, id: \.self) { $note in
                     NavigationLink {
                         NotesDetailView(notes: $note)
                     } label: {
                         NotesRowView(notes: note)
                     }
                 }
+
             }
             .navigationTitle("My Notes")
             .toolbar(content: {
@@ -42,12 +46,26 @@ struct MyNotesView: View {
                     [.medium, .large],
                 selection: $modalDetent)
             })
+            .onChange(of: searchedText) {
+                if searchedText.isEmpty {
+                    filteredNotes = noteList.notes
+                }
+                else {
+                    filteredNotes = noteList.notes.filter{ note in
+                        note.title.localizedCaseInsensitiveContains(searchedText) ||
+                        note.content.localizedCaseInsensitiveContains(searchedText)
+                    }
+                }
+            }
 
         }
+        .searchable(text: $searchedText)
+        .autocorrectionDisabled(true)
+        .textInputAutocapitalization(.never)
     }
 }
 
 #Preview {
-    MyNotesView()
+    MyNotesView(filteredNotes: NoteList().notes)
         .environmentObject(NoteList())
 }
