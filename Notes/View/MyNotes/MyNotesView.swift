@@ -27,6 +27,10 @@ struct MyNotesView: View {
                         NotesRowView(notes: note)
                     }
                 }
+                .onChange(of: noteList.notes) {
+                    searchedText = ""
+                    filteredNotes = noteList.notes
+                }
 
             }
             .navigationTitle("My Notes")

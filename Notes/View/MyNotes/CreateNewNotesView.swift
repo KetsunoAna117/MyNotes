@@ -48,6 +48,7 @@ struct CreateNewNotesView: View {
             Button {
                 let newNote = Notes(title: noteTitle, content: noteDesc)
                 noteList.notes.append(newNote)
+                print(noteList.notes)
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Save")
