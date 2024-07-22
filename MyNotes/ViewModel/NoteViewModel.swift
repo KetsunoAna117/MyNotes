@@ -23,7 +23,7 @@ class NoteViewModel: ObservableObject {
     }
     
     func trySaveNote(note: Note, text: NSAttributedString) -> Bool {
-        guard let data = convertAttributedStringToArchivedData(text) else { return false }
+        guard let data = StringDataConverter.convertAttributedStringToArchivedData(text) else { return false }
         
         guard let modelContext = modelContext else {
             print("Note can't be saved due to missing model context")
@@ -61,23 +61,6 @@ class NoteViewModel: ObservableObject {
         muttableAttributedString.append(attributedString)
         return muttableAttributedString
         
-    }
-    
-    func convertAttributedStringToArchivedData(_ attributedString: NSAttributedString) -> Data? {
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: attributedString, requiringSecureCoding: false)
-            return data
-        } catch {
-            print("Failed to archive NSAttributedString: \(error)")
-            return nil
-        }
-    }
-    
-    func convertDataToAttributedString(_ note: Note) -> NSAttributedString? {
-        if let encodedText = note.encodedText {
-            return try? NSAttributedString(data: encodedText, format: .archivedData)
-        }
-        return nil
     }
 
 }

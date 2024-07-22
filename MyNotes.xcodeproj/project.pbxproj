@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A9A966E2C4E02ED00084470 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A966D2C4E02ED00084470 /* DateFormatter.swift */; };
+		3A9A96702C4E5F4000084470 /* StringDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A966F2C4E5F4000084470 /* StringDataConverter.swift */; };
 		3AB256C72C40F08600BBB0D5 /* MyNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256C62C40F08600BBB0D5 /* MyNotesApp.swift */; };
 		3AB256C92C40F08600BBB0D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256C82C40F08600BBB0D5 /* ContentView.swift */; };
 		3AB256CB2C40F08800BBB0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB256CA2C40F08800BBB0D5 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3A9A966D2C4E02ED00084470 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		3A9A966F2C4E5F4000084470 /* StringDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDataConverter.swift; sourceTree = "<group>"; };
 		3AB256C32C40F08600BBB0D5 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB256C62C40F08600BBB0D5 /* MyNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesApp.swift; sourceTree = "<group>"; };
 		3AB256C82C40F08600BBB0D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9A966D2C4E02ED00084470 /* DateFormatter.swift */,
+				3A9A966F2C4E5F4000084470 /* StringDataConverter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			files = (
 				3A9A966E2C4E02ED00084470 /* DateFormatter.swift in Sources */,
 				3AB256E52C4275B900BBB0D5 /* NoteViewModel.swift in Sources */,
+				3A9A96702C4E5F4000084470 /* StringDataConverter.swift in Sources */,
 				3AB256EE2C42EA5400BBB0D5 /* UIImage.swift in Sources */,
 				3AB256D92C426A7C00BBB0D5 /* WriteNotesView.swift in Sources */,
 				3AB256EA2C42D91200BBB0D5 /* PhotoLibraryPicker.swift in Sources */,

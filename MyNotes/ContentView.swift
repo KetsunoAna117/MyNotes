@@ -19,7 +19,7 @@ struct ContentView: View {
                     Section(header: Text("Notes List")) {
                         ForEach(noteViewModel.noteList, id: \.id) { note in
                             NavigationLink(destination: {
-                                if let text = noteViewModel.convertDataToAttributedString(note) {
+                                if let text = StringDataConverter.convertDataToAttributedString(note) {
                                     WriteNotesView(noteViewModel: noteViewModel, note: note, text: text)
                                 }
                             }) {

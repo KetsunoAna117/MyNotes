@@ -23,8 +23,7 @@ class Note: Hashable {
     }
     
     static func getTestNote() -> Note {
-        let noteViewModel = NoteViewModel()
-        guard let data = noteViewModel.convertAttributedStringToArchivedData(NSAttributedString(string: "This is a test")) else {
+        guard let data = StringDataConverter.convertAttributedStringToArchivedData(NSAttributedString(string: "This is a test")) else {
             return Note(encodedText: nil)
         }
         return Note(encodedText: data)
