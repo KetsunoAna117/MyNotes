@@ -16,8 +16,10 @@ struct ContentView: View {
         NavigationStack {
             List {
                 if noteViewModel.noteList.isEmpty == false {
+                    // Section to display all saved notes in SwiftData
                     Section(header: Text("Notes List")) {
                         ForEach(noteViewModel.noteList, id: \.id) { note in
+                            // This navigation link to navigate and edit created notes
                             NavigationLink(destination: {
                                 if let text = StringDataConverter.convertDataToAttributedString(note) {
                                     WriteNotesView(noteViewModel: noteViewModel, note: note, text: text)
@@ -25,6 +27,7 @@ struct ContentView: View {
                             }) {
                                 Text(DateHelper.formatDate(note.dateWritten))
                             }
+                            // Add swipe right action to delete notes
                             .swipeActions {
                                 Button(role: .destructive) {
                                     noteViewModel.deleteSelectedNote(note: note)
@@ -35,6 +38,8 @@ struct ContentView: View {
                             .animation(.easeIn, value: noteViewModel.noteList)
                         }
                     }
+                } else {
+                    Text("No Data...")
                 }
             }
             .toolbar(content: {
@@ -45,6 +50,7 @@ struct ContentView: View {
             .navigationDestination(isPresented: $addButtonPressed) {
                 WriteNotesView(noteViewModel: noteViewModel, note: Note(encodedText: nil))
             }
+            // When the view is appeared on the screen, fetch all note from SwiftData and display it
             .onAppear {
                 noteViewModel.modelContext = modelContext
                 noteViewModel.fetchAllNotesToList()

@@ -49,6 +49,7 @@ struct WriteNotesView: View {
         }
         .toolbar(content: {
             Button(action: {
+                // save into swift data if user write something
                 if text.length > 0 {
                     noteSavedStatus = noteViewModel.trySaveNote(note: note, text: text)
                 }
@@ -57,6 +58,7 @@ struct WriteNotesView: View {
             })
         })
         .onChange(of: noteSavedStatus, { oldValue, newValue in
+            // if note successfully saved to swiftData, return to content view
             if noteSavedStatus {
                 dismiss()
             }
@@ -77,10 +79,7 @@ struct WriteNotesView: View {
         })
         .sheet(isPresented: $isShowingImagePicker, onDismiss: {
             if let inputImage = inputImage {
-                let cursorLocation = context.selectedRange.location
-                let insertion = RichTextInsertion<UIImage>.image(inputImage, at: cursorLocation, moveCursor: true)
-                let action = RichTextAction.pasteImage(insertion)
-                context.handle(action)
+                noteViewModel.loadImageIntoCursor(inputImage: inputImage, context: context)
                 self.inputImage = nil
             }
         }, content: {

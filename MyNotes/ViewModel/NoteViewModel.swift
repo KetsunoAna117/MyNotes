@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 import UIKit
+import RichTextKit
 
 class NoteViewModel: ObservableObject {
     var modelContext: ModelContext?
@@ -50,17 +51,11 @@ class NoteViewModel: ObservableObject {
         self.fetchAllNotesToList()
     }
     
-    func loadImageIntoCursor(inputImage: UIImage, text: NSAttributedString) -> NSAttributedString {
-        let newImage = UIImage.resizeImage(image: inputImage, targetSize: CGSize(width: 300, height: 100))
-        let attachment = NSTextAttachment()
-        attachment.image = newImage
-        
-        let attributedString = NSAttributedString(attachment: attachment)
-        let muttableAttributedString = NSMutableAttributedString(attributedString: text)
-        
-        muttableAttributedString.append(attributedString)
-        return muttableAttributedString
-        
+    func loadImageIntoCursor(inputImage: UIImage, context: RichTextContext) {
+        let cursorLocation = context.selectedRange.location
+        let insertion = RichTextInsertion<UIImage>.image(inputImage, at: cursorLocation, moveCursor: true)
+        let action = RichTextAction.pasteImage(insertion)
+        context.handle(action)
     }
 
 }
