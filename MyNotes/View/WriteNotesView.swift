@@ -77,14 +77,11 @@ struct WriteNotesView: View {
         })
         .sheet(isPresented: $isShowingImagePicker, onDismiss: {
             if let inputImage = inputImage {
-//                let newText = noteViewModel.loadImageIntoCursor(inputImage: inputImage, text: text)
-                let cursorLocation = context.selectedRange
-                let insertion = RichTextInsertion<UIImage>.image(inputImage, at: cursorLocation.location, moveCursor: true)
+                let cursorLocation = context.selectedRange.location
+                let insertion = RichTextInsertion<UIImage>.image(inputImage, at: cursorLocation, moveCursor: true)
                 let action = RichTextAction.pasteImage(insertion)
                 context.handle(action)
                 self.inputImage = nil
-                
-//                print("Text successfully modified to \(text.string)")
             }
         }, content: {
             switch imageSourceType {
