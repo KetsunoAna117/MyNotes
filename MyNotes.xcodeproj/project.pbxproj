@@ -7,18 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A9A966E2C4E02ED00084470 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A966D2C4E02ED00084470 /* DateFormatter.swift */; };
 		3AB256C72C40F08600BBB0D5 /* MyNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256C62C40F08600BBB0D5 /* MyNotesApp.swift */; };
 		3AB256C92C40F08600BBB0D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256C82C40F08600BBB0D5 /* ContentView.swift */; };
 		3AB256CB2C40F08800BBB0D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB256CA2C40F08800BBB0D5 /* Assets.xcassets */; };
 		3AB256CE2C40F08800BBB0D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB256CD2C40F08800BBB0D5 /* Preview Assets.xcassets */; };
+		3AB256D62C40F09D00BBB0D5 /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3AB256D52C40F09D00BBB0D5 /* RichTextKit */; };
+		3AB256D92C426A7C00BBB0D5 /* WriteNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256D82C426A7C00BBB0D5 /* WriteNotesView.swift */; };
+		3AB256DC2C426AC900BBB0D5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256DB2C426AC900BBB0D5 /* Note.swift */; };
+		3AB256DF2C426E6000BBB0D5 /* ModelContainerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256DE2C426E6000BBB0D5 /* ModelContainerProvider.swift */; };
+		3AB256E22C42704900BBB0D5 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256E12C42704900BBB0D5 /* NSAttributedStringExtension.swift */; };
+		3AB256E52C4275B900BBB0D5 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256E42C4275B900BBB0D5 /* NoteViewModel.swift */; };
+		3AB256E72C42D69000BBB0D5 /* CameraImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256E62C42D69000BBB0D5 /* CameraImagePicker.swift */; };
+		3AB256EA2C42D91200BBB0D5 /* PhotoLibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256E92C42D91200BBB0D5 /* PhotoLibraryPicker.swift */; };
+		3AB256EC2C42DFBD00BBB0D5 /* ImageSourceTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256EB2C42DFBD00BBB0D5 /* ImageSourceTypeEnum.swift */; };
+		3AB256EE2C42EA5400BBB0D5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB256ED2C42EA5400BBB0D5 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A9A966D2C4E02ED00084470 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		3AB256C32C40F08600BBB0D5 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB256C62C40F08600BBB0D5 /* MyNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesApp.swift; sourceTree = "<group>"; };
 		3AB256C82C40F08600BBB0D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3AB256CA2C40F08800BBB0D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AB256CD2C40F08800BBB0D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3AB256D82C426A7C00BBB0D5 /* WriteNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNotesView.swift; sourceTree = "<group>"; };
+		3AB256DB2C426AC900BBB0D5 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		3AB256DE2C426E6000BBB0D5 /* ModelContainerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerProvider.swift; sourceTree = "<group>"; };
+		3AB256E12C42704900BBB0D5 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
+		3AB256E42C4275B900BBB0D5 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		3AB256E62C42D69000BBB0D5 /* CameraImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImagePicker.swift; sourceTree = "<group>"; };
+		3AB256E92C42D91200BBB0D5 /* PhotoLibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPicker.swift; sourceTree = "<group>"; };
+		3AB256EB2C42DFBD00BBB0D5 /* ImageSourceTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSourceTypeEnum.swift; sourceTree = "<group>"; };
+		3AB256ED2C42EA5400BBB0D5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB256D62C40F09D00BBB0D5 /* RichTextKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A9A966A2C4E029F00084470 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256EB2C42DFBD00BBB0D5 /* ImageSourceTypeEnum.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		3A9A966B2C4E02B800084470 /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256DE2C426E6000BBB0D5 /* ModelContainerProvider.swift */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		3A9A966C2C4E02E300084470 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A966D2C4E02ED00084470 /* DateFormatter.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		3AB256BA2C40F08600BBB0D5 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +97,11 @@
 		3AB256C52C40F08600BBB0D5 /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				3AB256E82C42D8FA00BBB0D5 /* ViewController */,
+				3AB256E32C4275AC00BBB0D5 /* ViewModel */,
+				3AB256DD2C426DCB00BBB0D5 /* Utils */,
+				3AB256DA2C426ABD00BBB0D5 /* Model */,
+				3AB256D72C426A6E00BBB0D5 /* View */,
 				3AB256C62C40F08600BBB0D5 /* MyNotesApp.swift */,
 				3AB256C82C40F08600BBB0D5 /* ContentView.swift */,
 				3AB256CA2C40F08800BBB0D5 /* Assets.xcassets */,
@@ -65,6 +116,59 @@
 				3AB256CD2C40F08800BBB0D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3AB256D72C426A6E00BBB0D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256D82C426A7C00BBB0D5 /* WriteNotesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3AB256DA2C426ABD00BBB0D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256DB2C426AC900BBB0D5 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AB256DD2C426DCB00BBB0D5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3A9A966C2C4E02E300084470 /* Helper */,
+				3A9A966B2C4E02B800084470 /* SwiftData */,
+				3A9A966A2C4E029F00084470 /* Enums */,
+				3AB256E02C42703B00BBB0D5 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3AB256E02C42703B00BBB0D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256E12C42704900BBB0D5 /* NSAttributedStringExtension.swift */,
+				3AB256ED2C42EA5400BBB0D5 /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3AB256E32C4275AC00BBB0D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256E42C4275B900BBB0D5 /* NoteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3AB256E82C42D8FA00BBB0D5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3AB256E62C42D69000BBB0D5 /* CameraImagePicker.swift */,
+				3AB256E92C42D91200BBB0D5 /* PhotoLibraryPicker.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +187,9 @@
 			dependencies = (
 			);
 			name = MyNotes;
+			packageProductDependencies = (
+				3AB256D52C40F09D00BBB0D5 /* RichTextKit */,
+			);
 			productName = MyNotes;
 			productReference = 3AB256C32C40F08600BBB0D5 /* MyNotes.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +218,9 @@
 				Base,
 			);
 			mainGroup = 3AB256BA2C40F08600BBB0D5;
+			packageReferences = (
+				3AB256D42C40F09D00BBB0D5 /* XCRemoteSwiftPackageReference "RichTextKit" */,
+			);
 			productRefGroup = 3AB256C42C40F08600BBB0D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +247,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9A966E2C4E02ED00084470 /* DateFormatter.swift in Sources */,
+				3AB256E52C4275B900BBB0D5 /* NoteViewModel.swift in Sources */,
+				3AB256EE2C42EA5400BBB0D5 /* UIImage.swift in Sources */,
+				3AB256D92C426A7C00BBB0D5 /* WriteNotesView.swift in Sources */,
+				3AB256EA2C42D91200BBB0D5 /* PhotoLibraryPicker.swift in Sources */,
 				3AB256C92C40F08600BBB0D5 /* ContentView.swift in Sources */,
+				3AB256DF2C426E6000BBB0D5 /* ModelContainerProvider.swift in Sources */,
+				3AB256E22C42704900BBB0D5 /* NSAttributedStringExtension.swift in Sources */,
+				3AB256E72C42D69000BBB0D5 /* CameraImagePicker.swift in Sources */,
 				3AB256C72C40F08600BBB0D5 /* MyNotesApp.swift in Sources */,
+				3AB256EC2C42DFBD00BBB0D5 /* ImageSourceTypeEnum.swift in Sources */,
+				3AB256DC2C426AC900BBB0D5 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +395,7 @@
 				DEVELOPMENT_TEAM = SW8FY3LA3R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For inserting image into notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +425,7 @@
 				DEVELOPMENT_TEAM = SW8FY3LA3R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "For inserting image into notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +466,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AB256D42C40F09D00BBB0D5 /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AB256D52C40F09D00BBB0D5 /* RichTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AB256D42C40F09D00BBB0D5 /* XCRemoteSwiftPackageReference "RichTextKit" */;
+			productName = RichTextKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3AB256BB2C40F08600BBB0D5 /* Project object */;
 }

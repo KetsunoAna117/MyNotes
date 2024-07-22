@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MyNotesApp: App {
+    var sharedModelContainer: ModelContainer = ModelContainerProvider.createModelContainer()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+            }
         }
+        .modelContainer(sharedModelContainer)
     }
 }

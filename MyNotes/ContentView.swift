@@ -8,14 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
+    @StateObject private var noteViewModel = NoteViewModel()
+    @State private var addButtonPressed: Bool = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                if noteViewModel.noteList.isEmpty == false {
+                    Section(header: Text("Notes List")) {
+                        ForEach(noteViewModel.noteList, id: \.id) { note in
+                            NavigationLink(destination: {
+                                if let text = noteViewModel.convertDataToAttributedString(note) {
+                                    WriteNotesView(noteViewModel: noteViewModel, note: note, text: text)
+                                }
+                            }) {
+                                Text(DateHelper.formatDate(note.dateWritten))
+                            }
+                            .swipeActions {
+                                Button(role: .destructive) {
+                                    noteViewModel.deleteSelectedNote(note: note)
+                                } label: {
+                                    Text("Delete")
+                                }
+                            }
+                            .animation(.easeIn, value: noteViewModel.noteList)
+                        }
+                    }
+                }
+            }
+            .toolbar(content: {
+                Button("Add") {
+                    self.addButtonPressed = true
+                }
+            })
+            .navigationDestination(isPresented: $addButtonPressed) {
+                WriteNotesView(noteViewModel: noteViewModel, note: Note(encodedText: nil))
+            }
+            .onAppear {
+                noteViewModel.modelContext = modelContext
+                noteViewModel.fetchAllNotesToList()
+            }
+            .navigationTitle("My Notes")
         }
-        .padding()
     }
 }
 
